@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "QELM-XAI: Quantile-based Extreme Learning Machine with Explainability"
+authors:
+  - family-names: "Author"
+    given-names: "Names"
+    # Add actual author information here
+version: 1.0.0
+date-released: 2024-01-01
+url: "https://github.com/Gabriel09BR/QELM-XAI"
+repository-code: "https://github.com/Gabriel09BR/QELM-XAI"
+keywords:
+  - extreme-learning-machine
+  - machine-learning
+  - neural-networks
+  - quantile-regression
+  - explainable-ai
+  - classification
+license: MIT
+abstract: >
+  This repository provides implementations of traditional Extreme Learning 
+  Machines (ELM) and novel Quantile-based ELM (QELM) variants with multiple 
+  activation functions. QELM improves robustness to outliers and initialization 
+  sensitivity through quantile-based weight initialization. The repository 
+  includes reproducible experiment scripts and tools for model interpretation.
