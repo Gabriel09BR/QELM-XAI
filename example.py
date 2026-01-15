@@ -69,8 +69,8 @@ def main():
     print("\nNext steps:")
     print("  - Try different activation functions (ELM_Tanh, ELM_ReLU, etc.)")
     print("  - Experiment with different n_hidden values")
-    print("  - Run full experiments: python experiments/run_all_experiments.py")
     print("  - Check out the notebooks/ directory for more examples")
+    print("  - Explore the utility functions in utils/ for data loading and visualization")
 
 
 if __name__ == '__main__':

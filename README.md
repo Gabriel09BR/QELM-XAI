@@ -3,7 +3,7 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This repository accompanies the scientific article on **Quantile-based Extreme Learning Machine (QELM)** variants with multiple activation functions. The project provides reproducible implementations and experiments to validate the research findings presented in the paper.
+This repository accompanies the scientific article on **Quantile-based Extreme Learning Machine (QELM)** variants with multiple activation functions. The project provides reproducible implementations to validate the research findings presented in the paper.
 
 ## 📖 Research Motivation
 
@@ -19,7 +19,6 @@ This research introduces **Quantile-based ELM (QELM)** variants that:
 
 - **Explicit Model Naming**: All model classes use clear, descriptive names matching tables and figures in the paper
 - **Multiple Activation Functions**: Support for sigmoid, tanh, ReLU, sine, triangular basis (tribas), and hard limit (hardlim)
-- **Reproducible Experiments**: Structured experiment scripts with fixed random seeds
 - **Comprehensive Evaluation**: Performance metrics, statistical tests, and visualization tools
 - **Well-Documented**: Inline comments and docstrings for all implementations
 
@@ -84,55 +83,22 @@ QELM-XAI/
 │   ├── elm.py                # Traditional ELM variants
 │   ├── qelm.py               # Quantile-based ELM variants
 │   └── base.py               # Base classes and activation functions
-├── experiments/              # Reproducible experiment scripts
-│   ├── __init__.py
-│   ├── experiment_1_benchmark.py      # Benchmark comparison (Table 1)
-│   ├── experiment_2_robustness.py     # Robustness analysis (Table 2)
-│   ├── experiment_3_activation.py     # Activation function comparison (Figure 2)
-│   └── run_all_experiments.py         # Run complete experiment suite
 ├── utils/                    # Utility functions
 │   ├── __init__.py
 │   ├── data_loader.py       # Dataset loading and preprocessing
 │   ├── metrics.py           # Evaluation metrics
 │   └── visualization.py     # Plotting and visualization
 ├── notebooks/                # Jupyter notebooks for analysis
-│   ├── 01_exploratory_analysis.ipynb
-│   ├── 02_model_comparison.ipynb
-│   └── 03_visualization.ipynb
 ├── data/                     # Datasets (see data/README.md)
 │   └── README.md
-├── results/                  # Experiment outputs
+├── results/                  # Results and outputs
 │   └── README.md
 ├── requirements.txt          # Python dependencies
+├── example.py               # Quick start example
 ├── README.md                # This file
 ├── LICENSE                  # License information
 └── CITATION.cff             # Citation information
 ```
-
-## 🧪 Running Experiments
-
-All experiments from the paper can be reproduced using the scripts in the `experiments/` directory:
-
-### Individual Experiments
-
-```bash
-# Experiment 1: Benchmark comparison on standard datasets (Table 1 in paper)
-python experiments/experiment_1_benchmark.py
-
-# Experiment 2: Robustness analysis with different initializations (Table 2 in paper)
-python experiments/experiment_2_robustness.py
-
-# Experiment 3: Activation function comparison (Figure 2 in paper)
-python experiments/experiment_3_activation.py
-```
-
-### Run All Experiments
-
-```bash
-python experiments/run_all_experiments.py
-```
-
-Results will be saved in the `results/` directory with timestamps.
 
 ## 📊 Model Naming Convention
 
@@ -153,25 +119,12 @@ To ensure clarity and reproducibility, all models follow an explicit naming conv
 | `QELM_Tribas` | QELM with triangular basis | Proposed (Table 1, Row 11) |
 | `QELM_Hardlim` | QELM with hard limit | Proposed (Table 1, Row 12) |
 
-## 📈 Expected Results
-
-When running the experiments, you should observe:
-
-1. **Improved Accuracy**: QELM variants generally achieve 2-5% higher accuracy than traditional ELM on benchmark datasets
-2. **Better Robustness**: Lower standard deviation across multiple runs (reduced by ~30-40%)
-3. **Outlier Resistance**: Superior performance on datasets with noise and outliers
-4. **Activation Function Impact**: Sigmoid and tanh typically perform best for classification tasks
-
-See the paper for detailed statistical analysis and discussion.
-
 ## 🔍 Explainability (XAI)
 
 The repository includes tools for interpreting ELM/QELM models:
 - Feature importance analysis
 - Hidden layer weight visualization
 - Decision boundary plotting (for 2D datasets)
-
-See `notebooks/03_visualization.ipynb` for examples.
 
 ## 📝 Citation
 
