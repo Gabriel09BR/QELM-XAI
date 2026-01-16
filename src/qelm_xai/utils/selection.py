@@ -7,10 +7,22 @@ from qelm_xai.models.elm import ELMClassifier   # ou: from qelm_xai import ELMCl
 
 from itertools import product
 
+# Number of instances per class to be selected
+n = 50
+
+# Select n random instances from each class using a fixed seed
+SEED = 42
+df_sampled = (
+    dataset.groupby("class", group_keys=False)
+           .apply(lambda x: x.sample(min(len(x), n), random_state=SEED))
+)
+
+# Remove the selected instances from the original dataset
+dataset = dataset.drop(df_sampled.index)
 
 # --------- Multi-objective settings (COMPOSITE ONLY) ---------
 W_F1 = 0.7  # weight for F1 in the composite score (0..1)
-df = dataset
+df = df_sampled
 
 def best_composite_idx(df, f1_col="F1", tt_col="TT_sec", w=0.7):
     """
@@ -170,3 +182,4 @@ for k in kernels:
     except Exception as e:
 
         print(f"\n[WARNING] Composite multi-objective analysis failed for kernel {k}: {e}")
+
