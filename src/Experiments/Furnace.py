@@ -1,3 +1,21 @@
+# Used for the Furnace dataset, changing the class labels
+
+
+# Mapping dictionary
+map_classes = {
+    "Normal": 0,
+    "5_degree_dev": 1,
+    "2_degree_offset": 2,
+    "0.98xTemp": 3
+}
+
+# Create a new column with numeric values
+# df["class_num"] = df["class"].map(map_classes)
+
+# If you want to replace the original column:
+dataset["class"] = dataset["class"].map(map_classes)
+
+
 from pathlib import Path
 
 output_file = (
