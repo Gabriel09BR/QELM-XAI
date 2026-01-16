@@ -1,3 +1,5 @@
+from .elm import ELMClassifier
+
 ELM_VARIANTS = [
     "ELMRelu", "ELMSigmoid", "ELMPoly", "ELMLinear",
     "ELMTribas", "ELMHardlim", "ELMSine", "ELMTan", "ELMRadbas",
@@ -7,3 +9,4 @@ ELM_VARIANTS = [
 
 for name in ELM_VARIANTS:
     globals()[name] = type(name, (ELMClassifier,), {})
+
