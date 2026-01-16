@@ -1,3 +1,13 @@
+from pathlib import Path
+
+output_file = (
+    Path(__file__).resolve().parents[2]
+    / "data" / "results" / "ALLmodelsPickandPlace.xlsx"
+)
+
+output_file.parent.mkdir(parents=True, exist_ok=True)
+
+
 # Comparing all models: ELMs, QELMs, 'rf', 'lightgbm', 'gbc', 'et'
 
 classifiers = [
@@ -135,17 +145,9 @@ for rs in range(0, 29):  # different random_states → experiments run 30 times 
             print('rs:', rs, ' cl:', cl, ' row:', row)
 
 
-    results.to_excel(
-        'C:/Users/gabri/Downloads/ALLmodelsPickandPlace.xlsx',
-        index=False
-    )
+    results.to_excel(output_file, index=False)
+        
 
-
-df = pd.read_excel('C:/Users/gabri/Downloads/ALLmodelsPickandPlace.xlsx')
-
+df = pd.read_excel(output_file)
 df.insert(0, "Column 0", range(len(df)))
-
-df.to_excel(
-    'C:/Users/gabri/Downloads/ALLmodelsPickandPlace.xlsx',
-    index=False
-)
+df.to_excel(output_file, index=False)
