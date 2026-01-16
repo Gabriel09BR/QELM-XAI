@@ -39,3 +39,39 @@ from pycaret.classification import (
 
 # ===== PyCaret utils =====
 from pycaret.utils import *
+
+# =========================================================
+# Core model
+# =========================================================
+
+from .models.elm import ELMClassifier
+
+# =========================================================
+# Named model aliases (for logging / experiments / papers)
+# =========================================================
+
+from .models.aliases import (
+    # ELM variants
+    ELMRelu,
+    ELMSigmoid,
+    ELMTribas,
+    ELMRadbas,
+    ELMHardlim,
+    ELMLinear,
+    ELMSine,
+    ELMTan,
+    ELMPoly,
+
+    # QELM variants
+    QELMRelu,
+    QELMSigmoid,
+    QELMTribas,
+    QELMRadbas,
+    QELMHardlim,
+    QELMLinear,
+    QELMSine,
+    QELMTan,
+    QELMPoly,
+)
+
+
