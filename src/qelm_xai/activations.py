@@ -1,3 +1,5 @@
+import numpy as np
+
 # ===== Activations =====
 def _activation(X, kind, **params):
     if kind == "relu":
@@ -28,3 +30,4 @@ def _activation(X, kind, **params):
         return np.exp(-gamma * np.square(X))
     else:
         raise ValueError(f"Activation '{kind}' not supported.")
+
