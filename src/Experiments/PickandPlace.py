@@ -24,7 +24,6 @@ def base_model_name(cl):
 
 min_instances = 20  # 20–70
 max_instances = 25
-# classifiers = ['lr','knn','nb','dt','svm','rbfsvm','gpc','mlp','ridge']
 
 
 results = pd.DataFrame(columns=[
@@ -145,4 +144,5 @@ for rs in range(0, 29):  # different random_states → experiments run 30 times 
 df = pd.read_excel(output_file)
 df.insert(0, "Column 0", range(len(df)))
 df.to_excel(output_file, index=False)
+
 
