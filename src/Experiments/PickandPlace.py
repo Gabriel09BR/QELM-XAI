@@ -26,12 +26,6 @@ min_instances = 20  # 20–70
 max_instances = 25
 # classifiers = ['lr','knn','nb','dt','svm','rbfsvm','gpc','mlp','ridge']
 
-custom_grid = {
-    "n_hidden":  np.linspace(50, 1500, 40, dtype=int).tolist(),
-    "C":         np.linspace(0.01, 100.0, 100),
-    "generator": ['new']
-}
-
 
 results = pd.DataFrame(columns=[
     'random_state', 'classifier', 'n',
@@ -151,3 +145,4 @@ for rs in range(0, 29):  # different random_states → experiments run 30 times 
 df = pd.read_excel(output_file)
 df.insert(0, "Column 0", range(len(df)))
 df.to_excel(output_file, index=False)
+
