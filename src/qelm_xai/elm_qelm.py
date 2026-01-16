@@ -1,3 +1,8 @@
+import numpy as np
+from sklearn.base import BaseEstimator, ClassifierMixin
+from sklearn.preprocessing import LabelBinarizer
+from .activations import _activation
+
 
 # ===== Classifier =====
 class ELMClassifier(BaseEstimator, ClassifierMixin):
@@ -126,4 +131,5 @@ class ELMClassifier(BaseEstimator, ClassifierMixin):
         P = self.predict_proba(X)
         idx = np.argmax(P, axis=1)
         return self.classes_[idx]
+
 
