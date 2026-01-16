@@ -1,3 +1,12 @@
+import numpy as np
+import pandas as pd
+
+from pycaret.classification import setup, tune_model, pull
+
+from qelm_xai.models.elm import ELMClassifier   # ou: from qelm_xai import ELMClassifier
+
+from itertools import product
+
 
 # --------- Multi-objective settings (COMPOSITE ONLY) ---------
 W_F1 = 0.7  # weight for F1 in the composite score (0..1)
@@ -159,4 +168,5 @@ for k in kernels:
 
      
     except Exception as e:
+
         print(f"\n[WARNING] Composite multi-objective analysis failed for kernel {k}: {e}")
